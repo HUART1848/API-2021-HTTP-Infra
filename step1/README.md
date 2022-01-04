@@ -36,11 +36,9 @@ worker_processes  auto;
 error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 
-
 events {
     worker_connections  1024;
 }
-
 
 http {
     include       /etc/nginx/mime.types;
@@ -53,16 +51,13 @@ http {
     access_log  /var/log/nginx/access.log  main;
 
     sendfile        on;
-    #tcp_nopush     on;
 
     keepalive_timeout  65;
-
-    #gzip  on;
 
     include /etc/nginx/conf.d/*.conf;
 }
 ```
-Ainsi que la configuration http par défaut située dans `/etc/nginx/conf.d/default.conf`
+Ainsi que la configuration http par défaut située dans `/etc/nginx/conf.d/default.conf` :
 ```
 server {
     listen       80;
@@ -73,8 +68,9 @@ server {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
     }
+}
 ```
-On constate que nginx va servir le contenu du dossier `/usr/share/nginx/html/` sur le port 80
+On constate que nginx va servir le contenu du dossier `/usr/share/nginx/html/` sur le port 80.
 
 ## Conclusion
 J'ai constaté à quel point il est facile de créer un petit serveur web avec docker et nginx dans le cas présent. J'ai hâte d'utiliser ces outils pour les prochaines étapes du laboratoire.
