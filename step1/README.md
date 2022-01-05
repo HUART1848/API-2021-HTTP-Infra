@@ -26,9 +26,7 @@ J'ai fait le choix d'utiliser un template basé sur [Tailwind CSS](https://tailw
 Comme pour nginx et httpd, j'ai déjà utilisé Boostrap par le passé et j'étais curieux de voir à quoi ressemblait un site basé sur Tailwind.
 
 ### nginx vs httpd
-Évidemment, nginx et httpd ne se configurent pas de la même manière.
-
-Cependant je n'ai encore eu besoin de toucher aux fichiers de configurations de nginx dont voici la configuration principale par défaut située dans `/etc/nginx/nginx.conf` :
+Évidemment, nginx et httpd ne se configurent pas de la même manière, je n'ai cependant pas encore eu besoin de toucher aux fichiers de configurations de nginx, dont voici la configuration par défaut située dans `/etc/nginx/nginx.conf` :
 ```
 user  nginx;
 worker_processes  auto;
@@ -57,7 +55,7 @@ http {
     include /etc/nginx/conf.d/*.conf;
 }
 ```
-Ainsi que la configuration http par défaut située dans `/etc/nginx/conf.d/default.conf` :
+Ainsi que la configuration **http** par défaut située dans `/etc/nginx/conf.d/default.conf` :
 ```
 server {
     listen       80;
