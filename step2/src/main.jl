@@ -42,7 +42,7 @@ end
  
 "Lance le serveur et écoute sur le port (3000 par défaut)"
 function main()
-    println("Server listening on ", PORT)
+    println("Server listening on port ", PORT)
     HTTP.listen(ADDR, PORT) do http::HTTP.Stream
         HTTP.setstatus(http, 200)
         HTTP.setheader(http, "Content-Type" => "application/json")
