@@ -1,8 +1,11 @@
 using HTTP
 using JSON
 
-const ADDR = "127.0.0.1"
+# Constantes
+const ADDR = "0.0.0.0"
 const PORT = 3000
+
+const MAX_CATS = 10
 
 const BREEDS = ["Abyssinian",
     "Australian Mist", "Balinese",
@@ -22,25 +25,31 @@ const BREEDS = ["Abyssinian",
     "Somali", "Sphynx",
     "Tiffanie", "Tonkinese",
     "Turkish Van"]
+const STATUSES = ["playing", "sleeping", "eating", "drinking", "outside", "unknown"]
 
-const STATE = ["playing", "sleeping", "eating", "drinking", "outside"]
 
-function getcat()
-    breed = rand(BREEDS)
-    age = rand(1:32)
-    status = rand(STATE)
-    return json(Dict("breed" => breed, "age" => age, "status" => state))
+"Génère et retourne un chat"
+function getcat(agemax=24)
+    return Dict("breed" => rand(BREEDS),
+                "age" => string(rand(1:agemax)),
+                "status" => rand(STATUSES))
 end
 
+"Retourne `n` chats sous forme JSON"
+function getcats(n, agemax=24)
+    return json([getcat() for i in 1:n])
+end
+ 
+"Lance le serveur et écoute sur le port (3000 par défaut)"
 function main()
     println("Server listening on ", PORT)
     HTTP.listen(ADDR, PORT) do http::HTTP.Stream
-        @show http.message
         HTTP.setstatus(http, 200)
         HTTP.setheader(http, "Content-Type" => "application/json")
 
         HTTP.startwrite(http)
-        write(http, getcat())
+        write(http, getcats(rand(1:MAX_CATS)))
+        HTTP.closewrite(http)
     end
 end
 
