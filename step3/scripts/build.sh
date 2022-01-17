@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker build -t reverse-proxy .
+docker build -t huart1848/reverse-proxy .
