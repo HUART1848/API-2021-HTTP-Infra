@@ -39,7 +39,7 @@ end
 function getcats(n, agemax=24)
     return json([getcat() for i in 1:n])
 end
- 
+
 "Lance le serveur et écoute sur le port (3000 par défaut)"
 function main()
     println("Server listening on port ", PORT)
