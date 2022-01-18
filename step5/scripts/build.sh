@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker build -t ajax-http .
+docker build -t reverse-proxy:dynamic .

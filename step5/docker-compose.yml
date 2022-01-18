@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  ajax:
+    container_name: ajax_http
+    image: ajax-http
+  dynamic:
+    container_name: dynamic_http
+    image: dynamic-http
+  proxy:
+    container_name: reverse_proxy
+    image: reverse-proxy:dynamic
+    ports:
+      - "8080:80"
