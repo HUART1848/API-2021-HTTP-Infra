@@ -3,7 +3,7 @@
 ## Introduction
 Pour cette étape, j'ai repris les images et configurations des étapes précédentes.
 
-J'utilise une nouvelle image `huart1848/ajax-http` qui est une modification de l'image du serveur web statique. Le nouveau code de la page se situe dans `src/`. Les modifications comprennent notamment l'ajout de JQuery et d'un fichier `index.js` effectuant une requête AJAX. 
+J'utilise une nouvelle image `ajax-http` qui est une modification de l'image du serveur web statique. Le nouveau code de la page se situe dans `src/`. Les modifications comprennent notamment l'ajout de JQuery et d'un fichier `index.js` effectuant une requête AJAX. 
 
 La configuration du proxy inverse a été légèrement modifiée en conséquence.
 
