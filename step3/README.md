@@ -12,9 +12,10 @@ FROM nginx
 
 COPY ./includes/ /etc/nginx/includes/
 ```
-On copie la configuration du proxy inverse. On ne copie pas encore la configuration du serveur, car celle-ci dépend des adresses IP des deux serveurs servis par le proxy inverse. Ces adresses pouvant varier, le fait de copier la configuration au dernier moment (via un volume) permet d'adapter celle-ci en conséquence.
+On copie la configuration des options du proxy inverse. On ne copie pas encore la configuration globale du serveur, car celle-ci dépend des adresses IP des deux serveurs web servis par le proxy inverse. Ces adresses pouvant varier, le fait de copier la configuration au dernier moment (via un volume) permet d'adapter celle-ci en conséquence.
 
-Dans le dossier `scripts/` on retrouve 5 scripts: `build.sh`, `start-static.sh`, `start-dynamic.sh`, `start-proxy.sh` et `get-addresses.sh` qui permettent respectivement de créer l'image, lancer le serveur statique, lancer le serveur dynamique, lancer le proxy inverse et obtenir les adresses IP internes des deux serveurs web.
+Dans le dossier `scripts/` on retrouve 5 scripts:
+`build.sh`, `start-static.sh`, `start-dynamic.sh`, `start-proxy.sh` et `get-addresses.sh` qui permettent respectivement de créer l'image, lancer le serveur statique, lancer le serveur dynamique, lancer le proxy inverse et obtenir les adresses IP internes des deux serveurs web.
 
 N.B: Lancer les scripts depuis la racine du dossier `step3` avec `sh scripts/nom_du_script.sh` ou `./scripts/nom_du_script.sh`.
 
