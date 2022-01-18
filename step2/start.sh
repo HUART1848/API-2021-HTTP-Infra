@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker run -p 3000:3000 --rm --name dynamic_http huart1848/dynamic-http
+docker run --rm -p 3000:3000 --name dynamic_http huart1848/dynamic-http
