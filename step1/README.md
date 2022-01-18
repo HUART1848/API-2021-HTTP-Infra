@@ -14,7 +14,9 @@ COPY src/ /usr/share/nginx/html
 ```
 J'ai également créé 3 scripts, `build.sh`, `start.sh` et `reset.sh` qui permettent respectivement de créer l'image, créer et démarrer le container pour la première fois ainsi que de supprimer le container et l'image.
 
-Afin d'éviter de multiplier les containers, je nomme le container 'step1' afin de pouvoir le démarrer et m'y connecter ultérieurement avec la commande `docker container start step1`. Cela permet aussi de vérifier facilement la persistance des modifications, p.ex en modifiant directement les fichiers de configuration de nginx ou les fichiers html du site dans le container.
+Afin d'éviter de multiplier les containers, je nomme le container 'static-http' afin de pouvoir le démarrer et m'y connecter ultérieurement avec la commande `docker container start static-http`. Cela permet aussi de vérifier facilement la persistance des modifications, p.ex en modifiant directement les fichiers de configuration de nginx ou les fichiers html du site dans le container.
+
+N.B: Lancer les scripts depuis la racine du dossier `step1` avec `sh scripts/nom_du_script.sh` ou `./scripts/nom_du_script.sh`.
 
 ## Autres choses à retenir
 
