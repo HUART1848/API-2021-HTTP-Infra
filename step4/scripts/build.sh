@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-docker build -t huart1848/ajax-http .
+docker build -t ajax-http .
