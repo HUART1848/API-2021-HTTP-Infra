@@ -3,7 +3,7 @@
 ## Introduction
 Pour cette étape, j'ai repris les images et configurations des étapes précédentes.
 
-J'utilise une nouvelle image `reverse-proxy:dynamic` qui est basée sur l'image `reverse-proxy` créée précédemment. Les IP "en dur" on été remplacées par des noms, ce qui permet une configuration dynamique. La configuration n'est également plus montée à l'aide d'un volume au dernier moment mais copiée à la création de l'image.
+J'utilise une nouvelle image `reverse-proxy:dynamic` qui est basée sur l'image `reverse-proxy` créée précédemment. Les IP "en dur" on été remplacées par des noms dans le fichier `conf/default.conf`, ce qui permet une configuration dynamique. La configuration n'est également plus montée à l'aide d'un volume au dernier moment mais copiée à la création de l'image.
 
 J'utilise également [Docker Compose](https://docs.docker.com/compose/), qui permet de lancer facilement les différents containers et de leur attribuer des noms DNS internes qui sont nécessaires pour la configuration dynamique.
 
