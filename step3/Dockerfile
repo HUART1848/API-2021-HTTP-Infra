@@ -1,3 +1,3 @@
 FROM nginx
 
-COPY ./includes/ /etc/nginx/includes/
+COPY includes/ /etc/nginx/includes/

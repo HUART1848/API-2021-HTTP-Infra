@@ -10,7 +10,7 @@ Voici le contenu du `Dockerfile`. L'image est basée sur l'image officielle de n
 ```dockerfile
 FROM nginx
 
-COPY ./includes/ /etc/nginx/includes/
+COPY includes/ /etc/nginx/includes/
 ```
 On copie la configuration des options du proxy inverse. On ne copie pas encore la configuration globale du serveur, car celle-ci dépend des adresses IP des deux serveurs web servis par le proxy inverse. Ces adresses pouvant varier, le fait de copier la configuration au dernier moment (via un volume) permet d'adapter celle-ci en conséquence.
 
